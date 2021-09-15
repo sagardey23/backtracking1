@@ -237,20 +237,24 @@
     <p>Let's apply each of these two methods to the problem of coloring a checkerboard. This should be easily solvable; after all, a checkerboard only needs two colors.</p>
     <p>In both methods, the colors are represented by integers, from <code> <font size="5" color="#660000"> RED=1 </font> </code> to <code> <font size="5" color="#660000"> BLUE=4  </font></code>. We define the following helper methods. The helper method code isn't displayed here because it's not important for understanding the method that does the backtracking.</p>
 
-    <dl><font size="4" face="arial" color="#660000" align="left">
+    <dl>
+        <font size="4" face="arial" color="#660000" align="left">
             boolean mapIsOK()</font>
-           <dd> <font size="4" align="center"> Used by method 1 to check (at a leaf node) whether the entire map is colored correctly.
+            <dd><font size="4" align="center"> Used by method 1 to check (at a leaf node) whether the entire map is colored correctly.
             </font></dd>
-    </dl>
-    <dl><font size="4" face="arial" color="#660000" align="left">
+        </dl>
+    <dl>
+        <font size="4" face="arial" color="#660000" align="left">
             boolean okToColor(int row, int column, int color)</font>
-            <dd><font size="4"> Used by method 2 to check, at every node, whether there is an adjacent node already colored with the given color.</font></dd>
-    </dl>
-    <dl><font size="4" face="arial" color="#660000">
+            <dd><font size="4"> Used by method 2 to check, at every node, whether there is an adjacent node already colored with the given color.</font>
+        </dd>
+        </dl>
+    <dl>
+          <font size="4" face="arial" color="#660000">
             int[] nextRowAndColumn(int row, int column)</font>
             <dd><font size="4"> Used by both methods to find the next "country" (actually, the row and column of the next square on the checkerboard).
             </font></dd>
-    </dl>   
+        </dl>
     <p>Here's the code for method 1:</p>
     <pre>
         <font size="4" face="arial" color="#660000">
